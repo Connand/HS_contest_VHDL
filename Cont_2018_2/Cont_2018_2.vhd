@@ -66,7 +66,8 @@ architecture beh of Cont_2018_2 is
 		 Status_s:out std_logic_vector(1 downto 0);
 		 TX_W:in std_logic;
 		 TXData:in std_logic_vector(7 downto 0);
-		 TX:out std_logic);
+		 TX:out std_logic
+	    );
 	End Component RS232_T1;
 --UART RX
 	Component RS232_R2 is
@@ -78,7 +79,8 @@ architecture beh of Cont_2018_2 is
 		 Status_s:out std_logic_vector(2 downto 0);
 		 Rx_R:in std_logic;
 		 RD:in std_logic;
-		 RxDs:out std_logic_vector(7 downto 0));
+		 RxDs:out std_logic_vector(7 downto 0)
+	    );
 	End Component RS232_R2;
 
 
