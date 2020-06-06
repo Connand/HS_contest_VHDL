@@ -57,31 +57,29 @@ end Cont_2018_2;
 
 architecture beh of Cont_2018_2 is
 --UART TX
-Component RS232_T1 is
-Port(clk,reset:in std_logic;
-	 DL:in std_logic_vector(1 downto 0);	 --00:5,01:6,10:7,11:8 Bit
-	 ParityN:in std_logic_vector(2 downto 0);--000:None,100:Even,101:Odd,110:Space,111:Mark
-	 StopN:in std_logic_vector(1 downto 0);	 --0x:1Bit,10:2Bit,11:1.5Bit
-	 F_Set:in std_logic_vector(2 downto 0);
-	 Status_s:out std_logic_vector(1 downto 0);
-	 TX_W:in std_logic;
-	 TXData:in std_logic_vector(7 downto 0);
-	 TX:out std_logic
-    );
-End Component RS232_T1;
+	component RS232_T1 is
+	port(clk,reset:in std_logic;
+		 DL:in std_logic_vector(1 downto 0);	 --00:5,01:6,10:7,11:8 Bit
+		 ParityN:in std_logic_vector(2 downto 0);--000:None,100:Even,101:Odd,110:Space,111:Mark
+		 StopN:in std_logic_vector(1 downto 0);	 --0x:1Bit,10:2Bit,11:1.5Bit
+		 F_Set:in std_logic_vector(2 downto 0);
+		 Status_s:out std_logic_vector(1 downto 0);
+		 TX_W:in std_logic;
+		 TXData:in std_logic_vector(7 downto 0);
+		 TX:out std_logic);
+	end component RS232_T1;
 --UART RX
-Component RS232_R2 is
-Port(Clk,Reset:in std_logic;
-	 DL:in std_logic_vector(1 downto 0);	 --00:5,01:6,10:7,11:8 Bit
-	 ParityN:in std_logic_vector(2 downto 0);--0xx:None,100:Even,101:Odd,110:Space,111:Mark
-	 StopN:in std_logic_vector(1 downto 0);	 --0x:1Bit,10:2Bit,11:1.5Bit
-	 F_Set:in std_logic_vector(2 downto 0);
-	 Status_s:out std_logic_vector(2 downto 0);
-	 Rx_R:in std_logic;
-	 RD:in std_logic;
-	 RxDs:out std_logic_vector(7 downto 0)
-    );
-End Component RS232_R2;
+	component RS232_R2 is
+	port(Clk,Reset:in std_logic;
+		 DL:in std_logic_vector(1 downto 0);	 --00:5,01:6,10:7,11:8 Bit
+		 ParityN:in std_logic_vector(2 downto 0);--0xx:None,100:Even,101:Odd,110:Space,111:Mark
+		 StopN:in std_logic_vector(1 downto 0);	 --0x:1Bit,10:2Bit,11:1.5Bit
+		 F_Set:in std_logic_vector(2 downto 0);
+		 Status_s:out std_logic_vector(2 downto 0);
+		 Rx_R:in std_logic;
+		 RD:in std_logic;
+		 RxDs:out std_logic_vector(7 downto 0));
+	end component RS232_R2;
 
 
 
