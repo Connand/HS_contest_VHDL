@@ -9,7 +9,7 @@
 --AC：使用狀況
 --EA：操作結束
 --99：無空櫃子
-
+--AAAAAAAA
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
