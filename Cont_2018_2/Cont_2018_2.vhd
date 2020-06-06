@@ -79,7 +79,7 @@ architecture beh of Cont_2018_2 is
 		 Rx_R:in std_logic;
 		 RD:in std_logic;
 		 RxDs:out std_logic_vector(7 downto 0));
-	End Component;
+	End Component RS232_R2;
 
 
 
